@@ -1,0 +1,12 @@
+[submodule "YSJEN/vendor/spdlog"]
+	path = YSJEN/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "YSJEN/vendor/GLFW"]
+	path = YSJEN/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
+[submodule "YSJEN/vendor/imgui"]
+	path = YSJEN/vendor/imgui
+	url = https://github.com/TheCherno/imgui
+[submodule "YSJEN/vendor/glm"]
+	path = YSJEN/vendor/glm
+	url = https://github.com/g-truc/glm
