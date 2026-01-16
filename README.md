@@ -1,2 +1,5 @@
-# YSJEN
-jusr a project of GE
+## YSJEN
+
+just a project of a prepare of GameEngine
+
+
