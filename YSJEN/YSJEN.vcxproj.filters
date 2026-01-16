@@ -7,17 +7,26 @@
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Platform\OpenGL">
+      <UniqueIdentifier>{35A49437-A105-7245-2A73-B8F796D3A804}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Platform\Windows">
       <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\YSJEN">
       <UniqueIdentifier>{C55A35B4-31C5-E92A-7A03-9BD0E6ACC77F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\YSJEN\Core">
+      <UniqueIdentifier>{3D029F5C-29D0-9262-1264-0389FED06EC7}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\YSJEN\Events">
       <UniqueIdentifier>{09978A05-F58F-A957-1EC2-8EDC0A1A8963}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\YSJEN\ImGui">
       <UniqueIdentifier>{AF0FEAF0-1B9B-57B5-24AC-DAA990B6B3B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\YSJEN\Renderer">
+      <UniqueIdentifier>{0B8C8789-F76F-48DF-60D0-42324CD33261}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -40,8 +49,29 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -56,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="src\YSJEN\Core.h">
       <Filter>src\YSJEN</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Core\Timestep.h">
+      <Filter>src\YSJEN\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\YSJEN\EntryPoint.h">
       <Filter>src\YSJEN</Filter>
@@ -92,6 +125,36 @@
     </ClInclude>
     <ClInclude Include="src\YSJEN\MouseButtonCodes.h">
       <Filter>src\YSJEN</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\Buffer.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\Camera.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\CameraController.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\GraphicsContext.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\RenderCommand.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\Renderer.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\RendererAPI.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\Shader.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\Texture.h">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSJEN\Renderer\VertexArray.h">
+      <Filter>src\YSJEN\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\YSJEN\Window.h">
       <Filter>src\YSJEN</Filter>
@@ -1356,8 +1419,29 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
@@ -1382,8 +1466,38 @@
     <ClCompile Include="src\YSJEN\Log.cpp">
       <Filter>src\YSJEN</Filter>
     </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\Buffer.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\Camera.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\CameraController.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\RenderCommand.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\Renderer.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\RendererAPI.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\Shader.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\Texture.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSJEN\Renderer\VertexArray.cpp">
+      <Filter>src\YSJEN\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\yepch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

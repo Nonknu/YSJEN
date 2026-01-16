@@ -8,9 +8,13 @@
 #include "Events/Event.h"
 #include "YSJEN/Events/ApplicationEvent.h"
 
+#include "YSJEN/Core/Timestep.h"
+
 #include "YSJEN/ImGui/ImGuiLayer.h"
-
-
+#include "YSJEN/Renderer/Shader.h"
+#include "YSJEN/Renderer/Buffer.h"
+#include "YSJEN/Renderer/VertexArray.h"
+#include "YSJEN/Renderer/Camera.h"
 namespace YSJEN {
 	class YSJEN_API Application
 	{
@@ -26,6 +30,7 @@ namespace YSJEN {
 
 		inline static Application& Get() { return *s_Instance; }
 		inline Window& GetWindow() { return *m_Window; }
+
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		
@@ -34,7 +39,8 @@ namespace YSJEN {
 
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
+		float m_LastFrameTime = 0.0f;
+	private:
 		static Application* s_Instance;
 	};
 

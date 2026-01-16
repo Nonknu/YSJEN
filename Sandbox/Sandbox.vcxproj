@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>YE_PLATFORM_WINDOWS;YE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\YSJEN\vendor\spdlog\include;..\YSJEN\src;..\YSJEN\vendor;..\YSJEN\vendor\imgui;..\YSJEN\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\YSJEN\vendor\spdlog\include;..\YSJEN\src;..\YSJEN\vendor;..\YSJEN\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -97,7 +97,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>YE_PLATFORM_WINDOWS;YE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\YSJEN\vendor\spdlog\include;..\YSJEN\src;..\YSJEN\vendor;..\YSJEN\vendor\imgui;..\YSJEN\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\YSJEN\vendor\spdlog\include;..\YSJEN\src;..\YSJEN\vendor;..\YSJEN\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +119,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>YE_PLATFORM_WINDOWS;YE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\YSJEN\vendor\spdlog\include;..\YSJEN\src;..\YSJEN\vendor;..\YSJEN\vendor\imgui;..\YSJEN\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\YSJEN\vendor\spdlog\include;..\YSJEN\src;..\YSJEN\vendor;..\YSJEN\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -143,9 +143,11 @@
     <ProjectReference Include="..\YSJEN\YSJEN.vcxproj">
       <Project>{6E4C780E-DA60-A0BF-A3E2-431F0FB69CF0}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\YSJEN\vendor\imgui\ImGui.vcxproj">
-      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\shadertoy1.glsl" />
+    <None Include="assets\shaders\Square.glsl" />
+    <None Include="assets\shaders\Texture.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

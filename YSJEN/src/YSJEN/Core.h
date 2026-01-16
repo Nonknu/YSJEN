@@ -1,12 +1,16 @@
 #pragma once
-
+#include<memory>
 
 #ifdef YE_PLATFORM_WINDOWS
+#if HZ_DYNAMIC_LINK
 	#ifdef YE_BUILD_DLL
 		#define YSJEN_API __declspec(dllexport)
 	#else
 		#define YSJEN_API __declspec(dllimport)
 	#endif
+#else
+	#define YSJEN_API
+#endif
 #else
 	#error YSJEN only support Windows
 #endif // YE_PLATFORM_WINDOWS
@@ -28,3 +32,12 @@
 #define BIT(x) (1<<x)
 
 #define YE_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
+
+namespace YSJEN {
+
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+}

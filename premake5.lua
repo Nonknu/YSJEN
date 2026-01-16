@@ -16,6 +16,7 @@ IncludeDir["GLFW"] = "YSJEN/vendor/GLFW/include"
 IncludeDir["Glad"] = "YSJEN/vendor/Glad/include"
 IncludeDir["Imgui"] = "YSJEN/vendor/imgui"
 IncludeDir["glm"] = "YSJEN/vendor/glm"
+IncludeDir["stb_image"] = "YSJEN/vendor/stb_image"
 
 include "YSJEN/vendor/GLFW"
 include "YSJEN/vendor/Glad"
@@ -23,9 +24,9 @@ include "YSJEN/vendor/imgui"
 
 project "YSJEN"
     location "YSJEN"
-    kind "SharedLib"
-    language "C++"
-    staticruntime "Off"
+    kind "StaticLib"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -37,8 +38,15 @@ project "YSJEN"
     {
         "%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/stb_image/**.h",
+        "%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+    }
+
+    defines
+    {
+        "_CRT_SECURE_NO_WARNINGS"
     }
 
     includedirs
@@ -48,7 +56,8 @@ project "YSJEN"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.Imgui}",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.stb_image}"
     }
     
     links
@@ -60,8 +69,7 @@ project "YSJEN"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
+        staticruntime "on"
         systemversion "latest"
         buildoptions "/utf-8"
         
@@ -71,29 +79,24 @@ project "YSJEN"
             "YE_BUILD_DLL",
             "GLFW_INCLUDE_NONE"
         }
-
-        postbuildcommands
-        {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-        }
     
     filter "configurations:Debug"
         defines "YE_DEBUG"
         runtime "Debug"
         buildoptions "/MDd"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         defines "YE_RELEASE"
         runtime "Release"
         buildoptions "/MD"
-        optimize "On"
+        optimize "on"
 
     filter "configurations:Dist"
         defines "YE_DIST"
         runtime "Release"
         buildoptions "/MD"
-        optimize "On"
+        optimize "on"
 
     filter {"system:windows", "configurations:Release"}
         buildoptions "/MT"
@@ -103,7 +106,8 @@ project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
     language "C++"
-    staticruntime "Off"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -128,8 +132,7 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
+        staticruntime "on"
         systemversion "latest"
         buildoptions "/utf-8"
 
@@ -142,19 +145,19 @@ project "Sandbox"
         defines "YE_DEBUG"
         runtime "Debug"
         buildoptions "/MDd"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         defines "YE_RELEASE"
         runtime "Release"
         buildoptions "/MD"
-        optimize "On"
+        optimize "on"
 
     filter "configurations:Dist"
         defines "YE_DIST"
         runtime "Release"
         buildoptions "/MD"
-        optimize "On"
+        optimize "on"
 
     filter {"system:windows", "configurations:Release"}
         buildoptions "/MT"

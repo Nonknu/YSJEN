@@ -2,7 +2,7 @@
 
 #include "YSJEN/Core.h"
 #include "YSJEN/Events/Event.h"
-
+#include "YSJEN/Core/Timestep.h"
 namespace YSJEN {
 
 	class YSJEN_API Layer
@@ -13,7 +13,7 @@ namespace YSJEN {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 

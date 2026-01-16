@@ -1,7 +1,7 @@
 #pragma once
 
 #include "YSJEN/Window.h"
-
+#include "YSJEN/Renderer/GraphicsContext.h"
 #include <GLFW/glfw3.h>
 namespace YSJEN {
 
@@ -27,7 +27,7 @@ namespace YSJEN {
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
-
+		GraphicsContext* m_Context;
 		struct WindowData
 		{
 			std::string Title;
